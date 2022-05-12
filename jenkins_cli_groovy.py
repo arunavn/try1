@@ -9,6 +9,7 @@ def execute_groovy_by_cli(config_dict):
     groovy_cmd= f"java -jar jenkins-cli.jar -s {config_dict['base_url']} -auth {config_dict['user']}:{config_dict['password']} groovy = < ./{config_dict['groovy_script']}"
     stream = os.popen(groovy_cmd)
     output = stream.readlines()
+    os.remove(config_dict['groovy_script'])
     return output
     
 
