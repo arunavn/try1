@@ -30,7 +30,7 @@ def modify_groovy_script(config_dict, param_dict):
     config_dict['groovy_script']= out_file
     return config_dict
 
-def execute_groovy_script(param_dict, config_dict= None, script_name= None):
+def execute_groovy_script(param_dict, config_dict= None, script_name= None, base_url= None):
 
     if config_dict == None:
         config_dict= {
@@ -42,6 +42,8 @@ def execute_groovy_script(param_dict, config_dict= None, script_name= None):
         }
     if script_name is not None:
         config_dict['groovy_script']= script_name
+    if base_url is not None:
+        config_dict['base_url']= base_url
 
     config_dict= modify_groovy_script(config_dict, param_dict)
     output1= execute_groovy_by_cli(config_dict)
