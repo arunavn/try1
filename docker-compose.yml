@@ -1,15 +1,15 @@
 version: '3'
 services: 
   slikk-authms-api: 
-    build: 
-      context: ./app
+#     build: 
+#       context: ./app
     container_name: slikk-authms-api
     image: 073645649421.dkr.ecr.eu-central-1.amazonaws.com/slikk-authms-api
     ports: 
       - "5001:5001"
   slikk-podms-api: 
-    build: 
-      context: ./app1
+#     build: 
+#       context: ./app1
     container_name: slikk-podms-api
     image: 073645649421.dkr.ecr.eu-central-1.amazonaws.com/slikk-podms-api
     ports: 
@@ -22,5 +22,5 @@ services:
     image: 073645649421.dkr.ecr.eu-central-1.amazonaws.com/slikk-nginx-api
     ports: 
       - "80:80"
-    build:
-      context: ./nginx
+#     build:
+#       context: ./nginx
